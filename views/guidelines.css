@@ -1,0 +1,281 @@
+/* for navbar */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana,sans-serif;
+} 
+body{
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative; 
+} 
+
+h3{
+  text-align:center;
+  font-size:24px;
+  margin:4%;
+}
+
+h3 a{
+  font-size:26px;
+  color:#3b5998;
+  text-decoration:none;
+}
+
+h3 a:hover{
+  color:#191717;
+}
+
+.header{
+	background-color: #191717;
+}
+
+.logo{
+	width: 55%;
+	height: 80px;
+	float: left;
+	background-color: #191717;
+	border-bottom: 3px solid #F8DE22;
+}
+
+.logo p{
+	font-size: 40px;
+	color: white;
+	font-weight: bold;
+	padding-left: 5%;
+	padding-top: 2%;
+	text-transform: uppercase;
+}
+
+.logo span{
+	font-size: 45px;
+	font-weight: normal;
+	color: rgb(0,250,200);
+	text-transform: capitalize;
+}
+
+#flip{
+	text-align: center;
+	background-color: #191717;
+	width: 100%;
+	clear: both;
+	display: none;
+	height: 40px;
+	border-top: 3px solid rgb(0,250,200);
+}
+
+#flip p{
+	padding-top: 1%;
+	font-size: 20px;
+	color: gray;
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
+}
+
+a{
+	text-decoration: none;
+	color: #fff;
+	transition: all 1s ease;
+}
+
+nav{
+	width: 45%;
+	height: 80px;
+	float: left;
+	background-color: #191717;
+	border-bottom: 3px solid #F8DE22;
+	transition: color 1s ease;
+	-moz-transition: color 1s ease;
+	-webkit-transition: color 1s ease;
+}
+
+nav ul li{
+	list-style: none;
+	color: white;
+	float: left;
+	font-size: 22px;
+	padding: 4% 3.5%;
+	transition: all 0.5s ease;
+}
+
+nav ul li:hover{
+	background-color: #F8DE22;
+	height:auto;
+}
+
+nav ul li a:hover{
+	color: black;
+}
+
+@media(max-width:1280px){
+
+	*{
+		font-size: 18px;
+	}
+
+	.logo p{
+		font-size: 38px;
+		padding-left: 8%;
+	}
+
+	nav ul li{
+		font-size: 19px;
+		padding: 4.8% 3.3%;
+	}
+}
+
+@media(max-width:1024px){
+
+	*{
+		font-size: 17px;
+	}
+
+	.logo, nav{
+		height: 75px;
+	}
+
+	.logo p{
+		font-size: 35px;
+		padding-left: 8%;
+		padding-top: 2%;
+
+	}
+
+	.logo p span{
+		font-size: 40px;
+	}
+
+	nav ul li{
+		font-size: 18px;
+		padding: 5.3% 3.5%;
+    height:auto;
+	}
+  
+}
+
+@media(max-width:768px){
+
+	.logo{
+		width: 100%;
+		background-color: rgba(0,0,0,0.1);
+		clear: both;
+		text-align: center;
+		border:none;
+		height: 90px;
+	}
+
+	.logo p{
+		font-size: 36px;
+		padding-left: 0;
+	}
+
+	.logo p span{
+		font-size: 45px;
+	}
+
+	#flip{
+		display: block;	
+	}
+
+	#nav{
+		width: 100%;
+		height: 100%;
+		display: none;
+	}
+
+	#nav ul li{
+		border-bottom:2px solid rgba(0,0,0,0.1);
+		width: 100%;
+		padding: 1% 0%;
+		text-align: center;
+	}
+}
+  /* ---------------------------------- */
+  /* for guidelines */
+  header {
+    color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    animation-name:fadeIn;
+    animation-duration: 5s;
+}
+
+.guidelines {
+    margin-bottom: 20px;
+}
+
+.guidelines h2 {
+    color: #007bff;
+}
+
+.head2{
+    text-align: center;
+    padding-top: 2%;
+}
+.uli{
+    padding-top: 1.5%;
+}
+
+/* ----------------------------------------------- */
+/* footer */
+.footer{
+    padding:50px 15% 10px;
+    border-top: 6px; 
+    background-color: black;
+    color: white;  
+  }
+  .footer h2{
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  }
+  .footer .columns{
+  flex-basis: 25%;
+  flex-grow: 1;
+  margin-bottom: 20px;
+  }
+  .ques{
+  color: white;
+  }
+  .footer .columns a{
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: white;
+  }
+  .footer .row{
+  align-items: flex-start;
+  padding: 10px 0;
+  }
+  
+  .accordion{
+    width: 70%;
+    margin-left: 15%;
+  }
+  

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Profile</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="./css/edit.css">
+    <script type="text/javascript">
+  $(document).ready(function () {
+    $("#editForm").submit(function (event) {
+      event.preventDefault();
+
+      $.ajax({
+        type: 'POST',
+        url: '/profile/edit',
+        data: $('#editForm').serialize(),
+        dataType: 'json',
+        success: function (response) {
+          $('#editForm')[0].reset();
+
+          document.getElementById('editCheck').innerHTML = response.Success;
+
+          setTimeout(function () {
+            document.getElementById('editCheck').innerHTML = '';
+          }, 3000);
+
+          if (response.Success === 'Success!') {
+            document.getElementById("aa").click();
+          }
+        },
+        error: function () {
+        },
+      });
+    });
+  });
+  </script>
+</head>
+<body>
+  <!-- <h1>Edit Profile</h1>
+  <div id="form-cont">
+  <form method="post" action="/profile/edit" id="editform">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" value="<%= name %>" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="<%= email %>" required><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" value="<%= DOB %>" required><br>
+
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" value="<%= Phone %>" required><br>
+
+    <input type="submit" value="Save Changes">
+  </form>
+  </div> -->
+
+
+  <div class="container-xl px-4 mt-4">
+    <nav class="nav nav-borders">
+        <a class="nav-link active ms-0" href="/profile" target="__blank">Profile</a>
+    </nav>
+    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-xl-4">
+            </div>
+        </div>
+        <div class="col-xl-8">
+            <div class="card mb-4">
+                <div class="card-header">Account Details</div>
+                <div class="card-body">
+                    <form method="post" action="/profile/edit" id="editform">
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Username</label>
+                            <input type="text" id="inputUsername"  value="<%= name %>" placeholder="Enter your username" class="form-control" required="">
+                            <!-- <input type="text" id="inputusername" name="username" value="<%= name %>" required> -->
+                        </div>
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                            <input type="email" id="inputEmailAddress" value="<%= email %>" placeholder="Enter your email address" class="form-control" required="">
+                            <!-- <input type="text" id="inputEmailAddress" name="username" value="<%= email %>" required> -->
+                        </div>
+                        <div class="row gx-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputBirthday">Birthday</label>
+                                <input type="date" id="inputBirthday" value="<%= DOB %>" placeholder="Enter your birthday" class="form-control" required="">
+                                <!-- <input type="date" id="inputBirthday" name="dob" value="<%= DOB %>" required> -->
+                            </div>
+                            <div class="col-md-6">
+                              <label class="small mb-1" for="inputPhone">Phone number</label>
+                              <input type="tel" id="inputPhone" value="<%= Phone %>" placeholder="Enter your phone number" class="form-control" required="">
+                              <!-- <input type="text" id="inputphone" name="phone" value="<%= Phone %>" required><br> -->
+                          </div>
+                        </div>
+                        <input class="btn btn-primary" id="btn-prim" type="submit" value="Save Changes">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <div class="mssg bg-danger">
+    <span id="check" ></span>
+  </div>
+  <div id="LangTable"><a href="/profile" id="aa"></a>
+  </div>	
+</body>
+</html>

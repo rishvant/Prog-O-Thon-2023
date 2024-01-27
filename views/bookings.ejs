@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="./css/bookings.css">
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$( "#form4" ).submit(function(event) {
+				event.preventDefault();
+
+				$.ajax({
+					type: 'POST',
+					url: '/profile/bookings',
+					data: $('#form4').serialize(),
+					dataType: "json",
+					success: function(response){
+						//alert("a");
+						//console.log(response.Success);
+						$('#form4')[0].reset();
+						document.getElementById("check").innerHTML=response.Success;
+         					setTimeout(function(){
+         						document.getElementById("check").innerHTML="";
+         					},3000);
+         					if (response.Success=="Success!") {
+         						document.getElementById("aa").click();
+         					};
+         				},
+         				error: function() {
+         				}
+         			})
+			});
+		});
+	</script>
+</head>
+<body>
+    <div class="container">
+        <h1>Bookings</h1>
+        <form id="form4" action="post">
+          <table class="rwd-table">
+            <tbody>
+              <tr>
+                <th>Route</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Book</th>
+              </tr>
+              <tr>
+                <td data-th="Route">
+                  Route-1
+                </td>
+                <td data-th="Date">
+                  UPS
+                </td>
+                <td data-th="Time">
+                  ASDF19218
+                </td>
+                <td data-th="Book">
+                  06/25/2016
+                </td>
+              </tr>
+              <tr>
+                <td data-th="Route">
+                  Route-2
+                </td>
+                <td data-th="Date">
+                  UPS
+                </td>
+                <td data-th="Time">
+                  ASDF19218
+                </td>
+                <td data-th="Book">
+                  06/25/2016
+                </td>
+              </tr>
+              <tr>
+                <td data-th="Route">
+                  Route-3
+                </td>
+                <td data-th="Date">
+                  UPS
+                </td>
+                <td data-th="Time">
+                  ASDF19218
+                </td>
+                <td data-th="Book">
+                  06/25/2016
+                </td>
+              </tr>
+              <tr>
+                <td data-th="Route">
+                  Route-4
+                </td>
+                <td data-th="Date">
+                  UPS
+                </td>
+                <td data-th="Time">
+                  ASDF19218
+                </td>
+                <td data-th="Book">
+                  06/25/2016
+                </td>
+              </tr>
+              <tr>
+                <td data-th="Route">
+                    Route-5
+                </td>
+                <td data-th="Date">
+                  UPS
+                </td>
+                <td data-th="Time">
+                  ASDF19218
+                </td>
+                <td data-th="Book">
+                  06/25/2016
+                </td>
+              </tr>
+              <tr>
+                <td data-th="Route">
+                    Route-6
+                </td>
+                <td data-th="Date">
+                  UPS
+                </td>
+                <td data-th="Time">
+                  ASDF19218
+                </td>
+                <td data-th="Book">
+                  06/25/2016
+                </td>
+              </tr>
+              <tr>
+                <td data-th="Route">
+                    Route-7
+                </td>
+                <td data-th="Date">
+                  UPS
+                </td>
+                <td data-th="Time">
+                  ASDF19218
+                </td>
+                <td data-th="Book">
+                  06/25/2016
+                </td>
+              </tr>
+              <tr>
+                <td data-th="Route">
+                    Route-8
+                </td>
+                <td data-th="Date">
+                  UPS
+                </td>
+                <td data-th="Time">
+                  ASDF19218
+                </td>
+                <td data-th="Book">
+                  06/25/2016
+                </td>
+              </tr>
+              <tr>
+                <td data-th="Route">
+                    Route-9
+                </td>
+                <td data-th="Date">
+                  UPS
+                </td>
+                <td data-th="Time">
+                  ASDF19218
+                </td>
+                <td data-th="Book">
+                  06/25/2016
+                </td>
+              </tr>
+              <tr>
+                <td data-th="Roue">
+                    Route-10
+                </td>
+                <td data-th="Date">
+                  UPS
+                </td>
+                <td data-th="Time">
+                  ASDF19218
+                </td>
+                <td data-th="Book">
+                  06/25/2016
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          </form>
+          <div class="mssg bg-danger">
+            <span id="check" ></span>
+        </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="./css/profile.css">
+</head>
+<body>
+				<!-- Navbar top -->
+				<div class="navbar-top">
+					<div class="title">
+						<h1>Profile</h1>
+					</div>
+			
+					<!-- Navbar -->
+					<ul>
+						<li>
+						<li>
+							<a href="/logout">
+								<i class="fa fa-sign-out-alt fa-2x"></i>
+							</a>
+						</li>
+					</ul>
+					<!-- End -->
+				</div>
+				<!-- End -->
+			
+				<!-- Sidenav -->
+				<div class="sidenav">
+					<div class="profile">			
+						<div class="name">
+							<%= name %>
+						</div>
+					</div>
+			
+					<div class="sidenav-url">
+						<div class="url">
+							<a href="/profile" class="active">Profile</a>
+							<hr align="center">
+						</div>
+						<div class="url">
+							<a href="/profile/edit">Edit Profile</a>
+							<hr align="center">
+						</div>
+						<div class="url">
+							<a href="index.html">Home</a>
+							<hr align="center">
+						</div>
+						<div class="url">
+							<a href="services.html">Book</a>
+							<hr align="center">
+						</div>
+					</div>
+				</div>
+				<!-- End -->
+			
+				<!-- Main -->
+				<div class="main">
+					<h2>Profile Section</h2>
+					<div class="card">
+						<div class="card-body">
+							<table>
+								<tbody>
+									<tr>
+										<td>Name</td>
+										<td>:</td>
+										<td><%= name %></td>
+									</tr>
+									<tr>
+										<td>Email</td>
+										<td>:</td>
+										<td><%= email %></td>
+									</tr>
+									<tr>
+										<td>Birthday</td>
+										<td>:</td>
+										<td><%= dob %></td>
+									</tr>
+									<tr>
+										<td>Phone</td>
+										<td>:</td>
+										<td><%= phone %></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</body>
+				</html>
